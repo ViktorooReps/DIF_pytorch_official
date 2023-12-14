@@ -285,7 +285,6 @@ class TrainerMultiple(nn.Module):
     def calc_centers(self):
         self.mu_real = np.mean(self.train_corr_r[-20:])
         self.mu_fake = np.mean(self.train_corr_f[-20:])
-
     def calc_distance(self):
         dist_real = distance(self.test_corr_r, self.mu_real, self.mu_fake)
         dist_fake = distance(self.test_corr_f, self.mu_real, self.mu_fake)
